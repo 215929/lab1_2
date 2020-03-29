@@ -23,10 +23,13 @@ class RequestItem {
 
     private Money totalCost;
 
-    public RequestItem(ProductData productData, int quantity, Money totalCost) {
+    private TaxCalculationStrategy strategy;
+
+    public RequestItem(ProductData productData, int quantity, Money totalCost, TaxCalculationStrategy strategy) {
         this.productData = productData;
         this.quantity = quantity;
         this.totalCost = totalCost;
+        this.strategy = strategy;
     }
 
     public Money getTotalCost() {
@@ -41,4 +44,7 @@ class RequestItem {
         return quantity;
     }
 
+    public TaxCalculationStrategy getStrategy() {
+        return strategy;
+    }
 }
